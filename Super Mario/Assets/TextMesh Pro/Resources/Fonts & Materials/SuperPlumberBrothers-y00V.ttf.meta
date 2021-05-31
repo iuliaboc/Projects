@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 1ff9e27e98bcf8a40ab95171f188ee11
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Super Plumber Brothers
+  fontNames:
+  - Super Plumber Brothers
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 01541251959eee141808f345055ee1be, type: 3}
+  - {fileID: 12800000, guid: 0613ace17503d5d419c45a2bb12e15a7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

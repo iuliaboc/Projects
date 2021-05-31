@@ -1,0 +1,69 @@
+﻿<Window x:Class="MVVMPairs.Views.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMPairs.ViewModels"
+        mc:Ignorable="d"
+        Title="Game Window" Height="595" Width="573">
+    <Window.DataContext>
+        <local:GameVM />
+    </Window.DataContext>
+    <ItemsControl Name="grid" ItemsSource="{Binding GameBoard}"  >
+        <ItemsControl.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform AngleX="0.1"/>
+                <RotateTransform/>
+                <TranslateTransform X="0.5"/>
+            </TransformGroup>
+        </ItemsControl.RenderTransform>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <ItemsControl ItemsSource="{Binding}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Width="70" Height="70" BorderThickness="1" BorderBrush="#000000">
+                                <Button Command="{Binding ClickCommand}" CommandParameter="{Binding SimpleCell}" RenderTransformOrigin="0.1,0.1" >
+                                    <Button.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <TranslateTransform X="0.2" Y="0.2"/>
+                                        </TransformGroup>
+                                    </Button.RenderTransform>
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Image Source="{Binding SimpleCell.Image}" Stretch="UniformToFill" RenderTransformOrigin="0.2,3" >
+                                                <Image.LayoutTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform/>
+                                                        <SkewTransform/>
+                                                        <RotateTransform/>
+                                                        <TranslateTransform X="0.6" Y="0.6"/>
+                                                    </TransformGroup>
+                                                </Image.LayoutTransform>
+                                                <Image.RenderTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform/>
+                                                        <SkewTransform/>
+                                                        <RotateTransform/>
+                                                        <TranslateTransform X="0.2" Y="0.2"/>
+                                                    </TransformGroup>
+                                                </Image.RenderTransform>
+                                            </Image>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</Window>

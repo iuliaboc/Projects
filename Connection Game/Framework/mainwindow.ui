@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>438</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="styleSheet">
+       <string notr="true">font: 75 25pt &quot;Sitka Text&quot;;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Choose the game you want to play!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="havannahButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 85, 255);
+font: 75 18pt &quot;Sitka Text&quot;;</string>
+      </property>
+      <property name="text">
+       <string>HAVANNAH</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="hexButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 85, 255);
+font: 75 18pt &quot;Sitka Text&quot;;</string>
+      </property>
+      <property name="text">
+       <string>HEX</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="yButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 85, 255);
+font: 75 18pt &quot;Sitka Text&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Y</string>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="exitButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 0, 0);
+font: 75 18pt &quot;Sitka Text&quot;;</string>
+      </property>
+      <property name="text">
+       <string>EXIT</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

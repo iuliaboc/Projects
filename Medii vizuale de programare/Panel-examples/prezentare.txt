@@ -1,0 +1,45 @@
+Windows Presentation Foundation (WPF)
+
+
+Canvas - Este cel mai simplu Panel dintre toate. Nu are o utilitate implicita, iti permite sa pui elemente in el si apoi sa le pozitionezi folosind coordonate explicite,
+ exacte(date de tine). Seamana destul de mult cu WinForms.
+*adaugam 2 butoane, observam ca sunt plasate in exact acelasi loc, deci doar ultimul este vizibil
+*Canvas nu face absolut nimic pana nu incepem noi sa oferim coordonate pentru elementele adaugate(the child controls)--(pui coordonate)
+*vom folosi proprietatile atasate din controlul Canvas Left, Right, Top, Bottom, care ne vor ajuta sa pozitionam butoanele in cele 4 colturi ale Canvas ului
+*Cum am mentionat si anterior, din moment ce Canvas ul iti da control complet asupra pozitiilor, nu ii va pasa neaparat daca este indeajuns loc pentru toate elementele sau daca se suprapun. 
+Nu este prea folositor pentru design ul de dialog, dar Canvas este foarte bun, dupa cum implica si numele, pentru a desena anumite lucruri.
+ WPF are multe elemente pe care le putem plasa inauntrul Canvas ului pentru a realiza ilustratii.
+*In continuare vom discuta despre Z-Index. In mod normal, intr-un Canvas daca se suprapun doua elemente, cel definit ultimul va fi pus deasupra, dar putem schimba asta folosind 
+proprietatea ZIndex atasata
+
+
+
+WrapPanel - WrapPanel ul isi va pozitiona fiecare dintre elementele apartinatoare unul langa altul, orizontal in mod implicit sau vertical, pana cand nu mai are spatiu,
+ caz in  care va trece pe urmatoarea linie si va continua, "invelind-o" practic si pe aceasta.
+ Il folosim cand vrem ca elementele noastre sa se poata rearanja in momentul in care redimensionam fereastra si raman fara spatiu(pentru a le putea vedea pe toate in orice moment)
+Cand WrapPanel ul foloseste orientarea orizontala, elementele sale vor primi aceeasi inaltime(inaltimea celui mai inalt element). 
+In cazul orientarii verticale primesc aceeasi latime(a celui mai lat element)
+
+
+
+StackPanel - Seamana foarte mult cu WrapPanel, doar ca daca elementele din panel nu incap, acestea nu se rearanjeaza.
+In schimb, isi "largeste" continutul inr-o singura directie, permitandu-ti sa pui elementele unul peste altul. 
+Orientarea implicita este verticala dar poate fi de asemenea si pe orizontala. Elementele ocupa tot spatiul disponibil
+*Deci am observat ca elementele isi largeste elementele pentru a ocupa tot spatiul disponibil(aranjate vertical->largite orizontal, aranjate orizontal->largite vertical). 
+Asta se datoreaza faptului ca StackPanelul seteaza proprietatile HorizontalAlignment si VerticalAlignment la Stretch in mod implicit, dar putem suprascrie acest lucru
+
+
+
+
+
+
+DockPanel - Face pozitionarea elementelor in cele patru directii(top, bottom, left and right) foarte usoara. Este o alegere buna pentru multe situatii, spre exemplu daca vrem sa delimitam anumite zone in fereastra noastra, in sppecial datorita faptului ca ultimul element plasat in DockPanel, va umple automat spatiul ramas daca nu ii specificam in mod special noi sa nu o faca
+*O proprietate foarte importanta atasat acestui panel este, in mod evident, proprietatea DockPanel, care decide in ce directie dorim sa se pozitioneze elementul. Daca nu o folosim, atunci primele elemente vor merge in partea stanga, iar ultimul va ocupa tot spatiul ramas 
+*Cum am spus, ultimului element nu o sa i alocam o directie si va umple spatiul ramas. De observat este faptul ca restul butoanelor ocupa exact spatul de care au nevoie(in functie de textul/numele lor)
+*Alt lucru usor de observat e ca butoanele se suprapun, iar Panel ul decide cine vine in fata in functie de de ordinea in care au fost adaugate. Pentru a nu se mai suprapune putem pur si simplu sa se asociem inaltimi si latimi pentru a se potrivi in spatiul oferit
+*Dupa cum am mentionat anterior, ultimul element ocupa spatiul ramas, lucru ce poate fi oprit folosind LastChildFill(implicit este setat la True, iar noi il vom schimba la False)
+Grid - Este un Panel impartit pe Linii si Coloane. Este cel mai complex tip de Panel. Este folosit pentru a pune elemente pe o anumita linie/coloana. Elementele apartinatoare se redimensioneaza in functie de size-ul Gridului. Default, un grid are 1 linie si o coloana.
+*Il folosim in mare parte cand celelalte panel uri nu sunt indeajuns si avem nevoie de o combinatie intre mai multe tipuri de panel uri
+*In cea mai simpla forma, Grid ul ia toate elementele pe care le dam si le plaseaza in tot spatiul disponibil, unul peste celalalt
+*Implicit, fiecare element ocupa o singura celula, dar uneori dorim ca un anumit element sa ocupe mai multe randuri sau coloane. Pentru acest lucru avem proprietatile ColumnSpan and RowSpan pentru care valoarea implicita este 1, dar pe care o putem rescrie
+*Daca pana acum a observat ca Gridul ne permite sa decidem foarte usor cat spatiu sa ocupe fiecare rand si fiecare coloana, acum putem vedea ca ii permite si utilizatorului sa schimbe asta cu ajutorul GridSplitter ului. Doar il adaugam  la o coloana sau un rand dintr-un grid, cu spatiul care i se cuvine. Acesta ii permite utilizatorului sa il traga stanga-dreapta, sus-jos, in timp ce schimba sizs-ul coloanelor sau randurilor intre care se afla
