@@ -1,0 +1,19 @@
+[
+  {
+    "latitudine": 12,
+    "longitudine": 12,
+    "name": "Barcani",
+    "weather": "Afara este frumos."
+  },
+  {
+    "latitudine": 10,
+    "longitudine": 10,
+    "name": "Vama",
+    "weather": "Afara ploua."
+  },
+  {
+    "latitudine": 21,
+    "longitudine": 15,
+    "name": "Iasi",
+    "weather": "Afara este cald."
+]

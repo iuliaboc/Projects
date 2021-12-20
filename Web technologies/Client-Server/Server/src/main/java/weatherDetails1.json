@@ -1,0 +1,14 @@
+[
+  {
+    "latitudine": 12,
+    "longitudine": 12,
+    "name": "Barcani",
+    "weather": "Afara este super frumos si soare."
+  },
+  {
+    "latitudine": 10,
+    "longitudine": 10,
+    "name": "Vama",
+    "weather": "Afara ploua."
+  }
+]
